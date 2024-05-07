@@ -12,6 +12,11 @@ const NEW_GAME = [
   },
 ];
 function App() {
+  const reset = () => {
+    setCurrentMove(0);
+    setHistory(NEW_GAME);
+  };
+
   const [history, setHistory] = useState(NEW_GAME);
 
   const [currentMove, setCurrentMove] = useState(0);
@@ -83,6 +88,14 @@ function App() {
         handlesquareClick={handlesquareClick}
       />
       <h2>Current Game history</h2>
+      <button
+        onClick={() => {
+          reset();
+        }}
+        className={`btn-reset ${winner ? 'active' : ''}`}
+      >
+        New Game
+      </button>
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
     </div>
   );
