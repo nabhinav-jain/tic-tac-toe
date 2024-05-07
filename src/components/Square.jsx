@@ -1,6 +1,10 @@
-function Square({ value, onClick }) {
+function Square({ value, onClick, isWinningSquare }) {
   return (
-    <button className="square" type="button" onClick={onClick}>
+    <button
+      className={`square ${value == 'X' ? 'text-green' : 'text-orange'} ${isWinningSquare ? 'winning' : ''}`}
+      type="button"
+      onClick={onClick}
+    >
       {value}
     </button>
   );
