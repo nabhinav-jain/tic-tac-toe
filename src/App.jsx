@@ -76,13 +76,23 @@ function App() {
 
   return (
     <div className="app">
+      <div>
+        <span className="text-orange">Tic</span> tac{' '}
+        <span className="text-green">toe</span>
+      </div>
       <StatusMessage winner={winner} gamingBoard={gamingBoard} />
       <Board
         squares={gamingBoard.squares}
         handlesquareClick={handlesquareClick}
         winningSquares={winningSquares}
       />
-      <h2>Current Game history</h2>
+      <h2
+        style={{
+          fontWeight: 'normal',
+        }}
+      >
+        Current Game history
+      </h2>
       <button
         onClick={() => {
           reset();
